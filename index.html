@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jonathan D. Gonzalez Gaspar — Marketing Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink: #0F0E0C;
+    --paper: #F7F4EE;
+    --cream: #EDE8DC;
+    --rust: #C4480A;
+    --rust-light: #F0D5C8;
+    --gold: #B8934A;
+    --muted: #7A7669;
+    --border: rgba(15,14,12,0.12);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(247,244,238,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--rust); }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    padding: 6rem 3rem 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--rust);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--ink);
+    max-width: 42ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    transition: all 0.25s;
+  }
+
+  .btn-primary:hover {
+    background: var(--rust);
+    border-color: var(--rust);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--border);
+    transition: all 0.25s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--ink);
+  }
+
+  .hero-right {
+    padding: 6rem 3rem 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--cream);
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .stat-item {
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .stat-item:nth-child(2n) { border-right: none; }
+  .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--rust);
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .hero-tagline {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    border-left: 3px solid var(--rust);
+    background: white;
+  }
+
+  .hero-tagline p {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ── SECTION BASICS ── */
+  section { padding: 6rem 0; }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--rust);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  #about .section-label { color: var(--gold); }
+  #about .section-title { color: var(--paper); }
+  #about .section-title em { color: var(--gold); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    margin-top: 3rem;
+  }
+
+  .about-body {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: rgba(247,244,238,0.8);
+  }
+
+  .about-body p + p { margin-top: 1.25rem; }
+
+  .about-body strong { color: var(--paper); font-weight: 500; }
+
+  .about-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-fact {
+    padding: 1.5rem;
+    border: 1px solid rgba(247,244,238,0.12);
+    border-left: 3px solid var(--gold);
+  }
+
+  .about-fact-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .about-fact-value {
+    font-size: 0.95rem;
+    color: var(--paper);
+    line-height: 1.5;
+  }
+
+  /* ── WORK ── */
+  #work { background: var(--paper); }
+
+  .work-intro {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: end;
+  }
+
+  .work-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+
+  .case-studies {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .case-study {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .case-study:hover { background: var(--cream); padding-left: 1rem; padding-right: 1rem; margin: 0 -1rem; }
+
+  .case-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--rust-light);
+    line-height: 1;
+    padding-top: 0.25rem;
+  }
+
+  .case-content { flex: 1; }
+
+  .case-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rust);
+    background: var(--rust-light);
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .case-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .case-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 60ch;
+    margin-bottom: 1.25rem;
+  }
+
+  .case-results {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .case-result {
+    text-align: left;
+  }
+
+  .case-result-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--rust);
+    display: block;
+  }
+
+  .case-result-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .case-services {
+    text-align: right;
+    min-width: 160px;
+  }
+
+  .case-service-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .case-service-item {
+    font-size: 0.8rem;
+    color: var(--ink);
+    line-height: 1.8;
+  }
+
+  /* ── RESEARCH ── */
+  #research {
+    background: var(--cream);
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .research-col-title {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .pub-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pub-title {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+  }
+
+  .pub-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .pub-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .badge-published { background: var(--ink); color: var(--paper); }
+  .badge-prep { background: var(--gold); color: white; }
+  .badge-conf { background: var(--rust-light); color: var(--rust); }
+
+  .conf-item {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .conf-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+
+  .conf-meta {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  /* ── THINKING ── */
+  #thinking { background: var(--paper); }
+
+  .essay-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-top: 3rem;
+    padding: 3rem;
+    background: var(--cream);
+    border-left: 4px solid var(--rust);
+  }
+
+  .essay-meta { }
+
+  .essay-date {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .essay-category {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rust);
+    background: var(--rust-light);
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .essay-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .essay-read {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rust);
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 1px solid var(--rust);
+    transition: opacity 0.2s;
+  }
+
+  .essay-content { }
+
+  .essay-excerpt {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--ink);
+  }
+
+  .essay-excerpt p + p { margin-top: 1rem; }
+
+  .essay-excerpt strong {
+    font-weight: 500;
+    color: var(--rust);
+  }
+
+  /* Essay modal */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(15,14,12,0.7);
+    overflow-y: auto;
+    padding: 2rem;
+  }
+
+  .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+
+  .modal-box {
+    background: var(--paper);
+    max-width: 680px;
+    width: 100%;
+    margin: auto;
+    padding: 3rem;
+    position: relative;
+  }
+
+  .modal-close {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: none; border: none; font-size: 1.5rem; cursor: pointer;
+    color: var(--muted);
+    transition: color 0.2s;
+    font-family: var(--font-body);
+  }
+
+  .modal-close:hover { color: var(--rust); }
+
+  .modal-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-byline {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .modal-body {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--ink);
+  }
+
+  .modal-body p + p { margin-top: 1.25rem; }
+  .modal-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .modal-body strong { font-weight: 500; color: var(--rust); }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+  }
+
+  #contact .section-label { color: var(--gold); }
+  #contact .section-title { color: var(--paper); }
+  #contact .section-title em { color: var(--gold); }
+
+  .contact-sub {
+    font-size: 1.05rem;
+    color: rgba(247,244,238,0.65);
+    max-width: 50ch;
+    margin: 1rem auto 3rem;
+    line-height: 1.7;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(247,244,238,0.2);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.25s;
+  }
+
+  .contact-link:hover {
+    background: var(--rust);
+    border-color: var(--rust);
+  }
+
+  .contact-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin: 3rem auto;
+  }
+
+  .contact-detail {
+    font-size: 0.85rem;
+    color: rgba(247,244,238,0.5);
+    line-height: 2;
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #070706;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-name {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: rgba(247,244,238,0.4);
+  }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(247,244,238,0.25);
+    font-family: var(--font-mono);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    #home { grid-template-columns: 1fr; }
+    .hero-left { border-right: none; border-bottom: 1px solid var(--border); padding: 5rem 1.5rem 3rem; }
+    .hero-right { padding: 3rem 1.5rem; }
+    .about-grid, .research-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .work-intro { grid-template-columns: 1fr; gap: 1rem; }
+    .case-study { grid-template-columns: 50px 1fr; }
+    .case-services { display: none; }
+    .essay-card { grid-template-columns: 1fr; gap: 1.5rem; }
+    .container { padding: 0 1.5rem; }
+    section { padding: 4rem 0; }
+    .hero-name { font-size: 2.8rem; }
+    .modal-box { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">JDG</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#thinking">Thinking</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Marketing Strategist · Austin, TX</p>
+    <h1 class="hero-name">Jonathan<br/><em>Gonzalez</em><br/>Gaspar</h1>
+    <p class="hero-title">Consumer Behaviorist & Brand Builder</p>
+    <p class="hero-desc">
+      I use clinical psychology training to do what most marketers can't — understand why people actually make decisions, then build brand strategy around it. Bilingual. Data-driven. Built to own the strategy room.
+    </p>
+    <div class="hero-cta">
+      <a href="#work" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-secondary">Let's Talk</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">166%</div>
+        <div class="stat-label">Engagement growth driven for Icon Cinema</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1.3M+</div>
+        <div class="stat-label">Content views generated across campaigns</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Customer discovery interviews conducted</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">294K</div>
+        <div class="stat-label">Unique viewers reached through targeted content</div>
+      </div>
+    </div>
+    <div class="hero-tagline">
+      <p>"Most marketers read about consumer psychology.<br/>I spent years practicing it."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label fade-up">About</p>
+    <h2 class="section-title fade-up">The story behind<br/><em>the strategy</em></h2>
+    <div class="about-grid">
+      <div class="about-body fade-up">
+        <p>
+          Most marketing strategists learn consumer behavior from a textbook. I spent years sitting across from real people — understanding their fears, their motivations, the gap between what they say and what they actually do. That's not a credential. That's a completely different way of seeing an audience.
+        </p>
+        <p>
+          My path wasn't linear. I trained as a clinical psychologist, earning my M.A. from Hofstra University and my M.S. from Angelo State, where I also taught research methods, published peer-reviewed work, and led National Science Foundation research into how people make decisions. Then I pivoted — deliberately — into marketing strategy, because I saw that the brands winning right now aren't just the ones with the biggest budgets. They're the ones that actually understand people.
+        </p>
+        <p>
+          I'm currently completing my MBA in Marketing Analytics at Texas Tech University (top 20% of my cohort), while running aMiGO — an AI-powered wellness platform I built from zero, including 25+ customer discovery interviews, competitive analysis, and a full go-to-market strategy.
+        </p>
+        <p>
+          I'm <strong>bilingual English/Spanish</strong> at a native level, which isn't just a language skill — it's a cultural insight into one of the fastest-growing consumer markets in the US. I'm relocating to Austin in 2026, where I intend to build the kind of strategy work that actually moves people. Eventually, my own agency. For now, let's build something together.
+        </p>
+      </div>
+      <div class="about-sidebar fade-up">
+        <div class="about-fact">
+          <div class="about-fact-label">Background</div>
+          <div class="about-fact-value">Clinical Psychology (M.A., Hofstra) → Counseling Psychology (M.S., Angelo State) → Marketing Analytics MBA (Texas Tech, in progress)</div>
+        </div>
+        <div class="about-fact">
+          <div class="about-fact-label">Languages</div>
+          <div class="about-fact-value">English · Spanish — both native/bilingual level</div>
+        </div>
+        <div class="about-fact">
+          <div class="about-fact-label">Certifications</div>
+          <div class="about-fact-value">Google Analytics IQ · Meta Marketing Analytics · SEMrush SEO & Keyword · NSF I-Corps Entrepreneurship</div>
+        </div>
+        <div class="about-fact">
+          <div class="about-fact-label">The unexpected part</div>
+          <div class="about-fact-value">Former Level 1 boxing coach. Trained athletes in performance psychology before I knew that's what it was called.</div>
+        </div>
+        <div class="about-fact">
+          <div class="about-fact-label">Currently building</div>
+          <div class="about-fact-value">aMiGO — an AI-powered wellness platform integrating behavioral science with conversational AI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="container">
+    <div class="work-intro">
+      <div>
+        <p class="section-label fade-up">Work</p>
+        <h2 class="section-title fade-up">Case<br/><em>studies</em></h2>
+      </div>
+      <p class="work-desc fade-up">
+        Strategy isn't theory. Here's the work — what the problem was, what I did, and what happened as a result.
+      </p>
+    </div>
+
+    <div class="case-studies">
+
+      <!-- Case 1: Icon Cinema -->
+      <div class="case-study fade-up">
+        <div class="case-num">01</div>
+        <div class="case-content">
+          <span class="case-tag">Social Strategy · Content Marketing</span>
+          <h3 class="case-title">Icon Cinema Entertainment Center</h3>
+          <p class="case-desc">
+            Took over full marketing operations for a regional entertainment center with low digital presence. Built a data-driven content strategy from scratch — identifying high-performing formats, restructuring the content calendar, and turning social media into a real revenue channel.
+          </p>
+          <div class="case-results">
+            <div class="case-result">
+              <span class="case-result-num">166%</span>
+              <span class="case-result-label">Engagement growth</span>
+            </div>
+            <div class="case-result">
+              <span class="case-result-num">148%</span>
+              <span class="case-result-label">Follower growth</span>
+            </div>
+            <div class="case-result">
+              <span class="case-result-num">1.3M+</span>
+              <span class="case-result-label">Content views</span>
+            </div>
+            <div class="case-result">
+              <span class="case-result-num">294K</span>
+              <span class="case-result-label">Unique viewers</span>
+            </div>
+            <div class="case-result">
+              <span class="case-result-num">88%</span>
+              <span class="case-result-label">Engagement from top formats</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-services">
+          <div class="case-service-label">Services</div>
+          <div class="case-service-item">Social Media Strategy</div>
+          <div class="case-service-item">Content Production</div>
+          <div class="case-service-item">Analytics & Reporting</div>
+          <div class="case-service-item">Campaign Management</div>
+        </div>
+      </div>
+
+      <!-- Case 2: aMiGO -->
+      <div class="case-study fade-up">
+        <div class="case-num">02</div>
+        <div class="case-content">
+          <span class="case-tag">Product Strategy · GTM · Brand</span>
+          <h3 class="case-title">aMiGO Wellness Platform</h3>
+          <p class="case-desc">
+            Founded and led strategy for an AI-powered wellness platform integrating behavioral science with conversational AI. Built the product from zero: customer discovery, competitive landscape, brand positioning, user journey design, and go-to-market strategy — applying clinical psychology frameworks to product development.
+          </p>
+          <div class="case-results">
+            <div class="case-result">
+              <span class="case-result-num">25+</span>
+              <span class="case-result-label">Customer interviews</span>
+            </div>
+            <div class="case-result">
+              <span class="case-result-num">5</span>
+              <span class="case-result-label">Distinct brand personas</span>
+            </div>
+            <div class="case-result">
+              <span class="case-result-num">3</span>
+              <span class="case-result-label">Competitor segments mapped</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-services">
+          <div class="case-service-label">Services</div>
+          <div class="case-service-item">Customer Discovery</div>
+          <div class="case-service-item">Brand Strategy</div>
+          <div class="case-service-item">GTM Planning</div>
+          <div class="case-service-item">UX Journey Mapping</div>
+        </div>
+      </div>
+
+      <!-- Case 3: Senda Primera -->
+      <div class="case-study fade-up">
+        <div class="case-num">03</div>
+        <div class="case-content">
+          <span class="case-tag">Brand Launch · Local Marketing</span>
+          <h3 class="case-title">Senda Primera</h3>
+          <p class="case-desc">
+            Took an education startup from concept to launch — building full brand identity, bilingual messaging strategy, social media launch plan, and outreach infrastructure targeting schools and parents. Grounded the brand positioning in trust, transparency, and community authenticity.
+          </p>
+          <div class="case-results">
+            <div class="case-result">
+              <span class="case-result-num">0→1</span>
+              <span class="case-result-label">Brand built from scratch</span>
+            </div>
+            <div class="case-result">
+              <span class="case-result-num">2</span>
+              <span class="case-result-label">Languages, one voice</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-services">
+          <div class="case-service-label">Services</div>
+          <div class="case-service-item">Brand Identity</div>
+          <div class="case-service-item">Bilingual Messaging</div>
+          <div class="case-service-item">Local SEO Setup</div>
+          <div class="case-service-item">Social Launch Plan</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <p class="section-label fade-up">Research</p>
+    <h2 class="section-title fade-up">Consumer & behavioral<br/><em>research</em></h2>
+    <p class="fade-up" style="color:var(--muted);max-width:60ch;margin-top:0.75rem;font-size:0.95rem;line-height:1.7;">
+      Before I ran campaigns, I ran studies. Peer-reviewed research, NSF-funded consumer decision-making work, and 10+ conference presentations — applied now to brand strategy.
+    </p>
+
+    <div class="research-grid">
+      <div>
+        <div class="research-col-title fade-up">Publications</div>
+        <div class="pub-item fade-up">
+          <span class="pub-badge badge-published">Published · 2024</span>
+          <div class="pub-title">A Systematic Review of Barriers and Facilitators Impacting the Utilization of Mental Health Services Among Asian American Youth</div>
+          <div class="pub-meta">George, N., Lee, A., Gonzalez-Gaspar, J., & Kwan, M.Y.<br/><em>Evidence-Based Practice in Child and Adolescent Mental Health</em></div>
+        </div>
+        <div class="pub-item fade-up">
+          <span class="pub-badge badge-prep">In Preparation · 2025</span>
+          <div class="pub-title">Body Image, Culture, and Societal Influences in Males</div>
+          <div class="pub-meta">Karas, A., Gaspar-Gonzalez, J.D., & Kwan, M.Y.</div>
+        </div>
+        <div class="pub-item fade-up">
+          <span class="pub-badge badge-prep">In Preparation · 2025</span>
+          <div class="pub-title">Comparative Study of the Key Strategies Training for Individual Psychotherapy Model Across Therapeutic Modalities</div>
+          <div class="pub-meta">Gonzalez-Gaspar, J.D., Kelley, J., & Kwan, M.Y.</div>
+        </div>
+        <div class="pub-item fade-up">
+          <span class="pub-badge badge-prep">In Preparation · 2025</span>
+          <div class="pub-title">Pain Tolerance, Eating Habits, Exercise and Wellbeing</div>
+          <div class="pub-meta">Kwan, M.Y., Gonzalez-Gaspar, J.D., & Citron, K.</div>
+        </div>
+        <div class="pub-item fade-up">
+          <span class="pub-badge badge-prep">In Preparation · 2025</span>
+          <div class="pub-title">Exploring the Interplay of Cognitive, Emotional, and Behavioral Dimensions in Psychological Distress and Well-Being</div>
+          <div class="pub-meta">Gonzalez-Gaspar, J.D., & Kwan, M.Y.</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="research-col-title fade-up">Selected Conference Presentations</div>
+        <div class="conf-item fade-up">
+          <span class="pub-badge badge-conf">APS Global Summit · 2024</span>
+          <div class="conf-title">Comparative Study of the Key Strategies Training for Individual Psychotherapy Model</div>
+          <div class="conf-meta">APS Global Psychological Science Summit</div>
+        </div>
+        <div class="conf-item fade-up">
+          <span class="pub-badge badge-conf">NSF Conference · 2023</span>
+          <div class="conf-title">Gender & Minority Imbalance in STEM Fields</div>
+          <div class="conf-meta">NSF HSI PI Conference, San Antonio, TX</div>
+        </div>
+        <div class="conf-item fade-up">
+          <span class="pub-badge badge-conf">STEAM Expo · 2022</span>
+          <div class="conf-title">Why or Why Not STEM: What Gets in the Way and What Helps</div>
+          <div class="conf-meta">Region 15 STEAM Expo Workshop — Invited Presentation</div>
+        </div>
+        <div class="conf-item fade-up">
+          <span class="pub-badge badge-conf">SWPA · 2021</span>
+          <div class="conf-title">Myths about Bipolar Disorder</div>
+          <div class="conf-meta">Southwestern Psychological Association, San Antonio, TX</div>
+        </div>
+        <div class="conf-item fade-up">
+          <span class="pub-badge badge-conf">Pathways · 2019</span>
+          <div class="conf-title">Factors Associated with Drive for Muscularity</div>
+          <div class="conf-meta">3rd Place Award — Pathways Research Conference</div>
+        </div>
+
+        <div style="margin-top:2rem;" class="fade-up">
+          <div class="research-col-title">MBA Projects</div>
+        </div>
+        <div class="conf-item fade-up">
+          <span class="pub-badge badge-conf">Texas Tech MBA</span>
+          <div class="conf-title">Demand Forecasting Model</div>
+          <div class="conf-meta">Seasonal time-series models with MAPE validation · Market Forecasting & Analytics course</div>
+        </div>
+        <div class="conf-item fade-up">
+          <span class="pub-badge badge-conf">Reynolds Research</span>
+          <div class="conf-title">Consumer Segmentation Analysis</div>
+          <div class="conf-meta">Brand perception survey design + cross-tab analysis across consumer segments · Market Research Simternship</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THINKING -->
+<section id="thinking">
+  <div class="container">
+    <p class="section-label fade-up">Thinking</p>
+    <h2 class="section-title fade-up">Point of<br/><em>view</em></h2>
+
+    <div class="essay-card fade-up">
+      <div class="essay-meta">
+        <div class="essay-date">March 2026</div>
+        <span class="essay-category">Strategy · Psychology</span>
+        <h3 class="essay-title">What clinical psychology taught me about brand positioning</h3>
+        <a class="essay-read" onclick="document.getElementById('essay-modal').classList.add('open')">Read essay →</a>
+      </div>
+      <div class="essay-content">
+        <div class="essay-excerpt">
+          <p>
+            In therapy, there's a concept called the <strong>therapeutic alliance</strong> — the relationship between a clinician and a client that research consistently shows predicts outcomes more than any specific technique. In other words, how you make someone feel matters more than what you do to them.
+          </p>
+          <p>
+            I spent years building that skill. Understanding what people actually need versus what they say they need. Holding space for the gap between stated behavior and real behavior. Watching people resist exactly what would help them, for reasons they couldn't articulate.
+          </p>
+          <p>
+            Then I entered marketing. And I saw the same gap, everywhere — between what brands say to their audiences and what their audiences actually need to hear. The solution isn't better messaging. It's better listening...
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ESSAY MODAL -->
+<div class="modal-overlay" id="essay-modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('essay-modal').classList.remove('open')">✕</button>
+    <h2 class="modal-title">What clinical psychology taught me about brand positioning</h2>
+    <div class="modal-byline">Jonathan D. Gonzalez Gaspar · March 2026 · Strategy & Psychology</div>
+    <div class="modal-body">
+      <p>In therapy, there's a concept called the <strong>therapeutic alliance</strong> — the relationship between a clinician and a client that research consistently shows predicts outcomes more than any specific technique. In other words, how you make someone feel matters more than what you do to them.</p>
+
+      <p>I spent years building that skill. Understanding what people actually need versus what they say they need. Holding space for the gap between stated behavior and real behavior. Watching people resist exactly what would help them, for reasons they couldn't articulate.</p>
+
+      <p>Then I entered marketing. And I saw the same gap, everywhere — between what brands say to their audiences and what their audiences actually need to hear.</p>
+
+      <h3>The problem with most brand strategy</h3>
+      <p>Most brand positioning starts with the product. Here's what we make. Here's why it's good. Here's why you should want it. This is backwards. It's the equivalent of a therapist walking into session and immediately telling a client what their problem is. Technically you might be right. But you haven't earned the right to be heard — and without that, nothing you say lands.</p>
+
+      <p>The brands that actually win start with the person. Not the demographic. Not the persona card on a conference room wall. The actual emotional reality of someone's life — what they're afraid of, what they're proud of, what gap they're trying to close. <strong>Brand positioning is really a listening problem dressed up as a messaging problem.</strong></p>
+
+      <h3>What behavioral science actually teaches us</h3>
+      <p>One of the most durable findings in psychology is that people are remarkably poor predictors of their own behavior. We say we make decisions rationally. We don't. We say we choose based on features and price. We don't. We choose based on identity, social proof, loss aversion, and the story a product lets us tell about ourselves.</p>
+
+      <p>This isn't new information — behavioral economists have been writing about it for decades. But most marketing teams treat it as an interesting footnote, not a foundational design principle. Consumer insight that stops at "people want to feel good" is about as useful as a clinical assessment that stops at "patient seems stressed."</p>
+
+      <p>The real work is going deeper. What specifically triggers that emotional response? What are the competing motivations? What does this person believe about themselves — and how does your brand either confirm or challenge that belief?</p>
+
+      <h3>The bilingual dimension</h3>
+      <p>I want to name something that rarely gets discussed directly in marketing: the difference between translating for a market and actually understanding it. As a native Spanish speaker working in the US, I've watched brands spend enormous budgets on Spanish-language campaigns that feel hollow to the communities they're targeting — because they were built by people who see "Hispanic" as a demographic checkbox, not a lived identity with specific cultural textures, values, and humor.</p>
+
+      <p><strong>Authentic bilingual strategy isn't translation. It's cultural fluency.</strong> It's knowing when the Spanish version of your campaign should feel different — not just sound different. It's understanding that "familia" carries emotional weight in ways that "family" in English often doesn't, and building creative around that weight rather than around the word.</p>
+
+      <h3>Where this leaves me</h3>
+      <p>I didn't become a marketing strategist despite my psychology background. I became one because of it. The years I spent learning how people think, how they resist, how they change — those are the years that let me see what most brand strategy misses.</p>
+
+      <p>Strategy built on genuine human understanding doesn't just perform better on a dashboard. It earns the kind of loyalty that compounds over time — because it treats people like people, not conversion events.</p>
+
+      <p>That's the work I want to do. And it's just getting started.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label fade-up">Contact</p>
+    <h2 class="section-title fade-up">Let's build<br/><em>something</em></h2>
+    <p class="contact-sub fade-up">Relocating to Austin in May 2026. Open to agency strategy roles, in-house brand positions, and the right consulting partnerships.</p>
+    <div class="contact-links fade-up">
+      <a href="mailto:johndgaspar@gmail.com" class="contact-link">✉ Email me</a>
+      <a href="https://linkedin.com/in/johndgaspar" target="_blank" class="contact-link">↗ LinkedIn</a>
+      <a href="https://gasparandinfante.com" target="_blank" class="contact-link">↗ This site</a>
+    </div>
+    <div class="contact-divider"></div>
+    <div class="contact-detail fade-up">
+      johndgaspar@gmail.com &nbsp;·&nbsp; (325) 262-6840 &nbsp;·&nbsp; Austin, TX (relocating May 2026)<br/>
+      Available for conversations now — remote friendly until then.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Jonathan D. Gonzalez Gaspar</span>
+  <span class="footer-copy">gasparandinfante.com · 2026</span>
+</footer>
+
+<script>
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 0.08 + 's';
+    observer.observe(el);
+  });
+
+  // Nav active state
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--rust)' : '';
+    });
+  });
+</script>
+</body>
+</html>
